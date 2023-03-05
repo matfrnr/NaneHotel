@@ -1,0 +1,124 @@
+<!-- FOURNIER Mathéo -->
+<!-- S1C2-->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- Page-->
+<head>
+    <!-- Encodage -->
+    <meta charset="UTF-8">
+    <!-- Titre -->
+    <title>Réserver</title>
+    <!-- Fichier CSS -->
+    <link rel="stylesheet" href="./css/reserver.css" type="text/css">
+</head>
+
+<!-- Corps du document -->
+<body>
+
+<!-- En-tête de la page-->
+<header>
+
+    <!-- Menu hamburger -->
+    <input type="checkbox" id="hamburger" class="checkbox"> <!-- Coche pour ouvrir menu -->
+    <label for="hamburger" class="bouton">
+        <span class="trait"></span> <!-- Creation des traits-->
+    </label>
+    <div class="fondCouleur"></div> <!-- Div vide pour le background -->
+
+    <!-- Intérieur du menu hamburger -->
+    <nav class="nav">
+        <ul class="nav_interieur">
+            <!-- Liens des différentes pages -->
+            <li class="barre_nav"><a href="index.html"> Accueil</a></li>
+            <li class="barre_nav"><a href="index.html#footer"> Aide</a></li>
+            <li class="barre_nav"><a href="connexion.html"> Connexion</a></li>
+            <li class="barre_nav"><a href="contact.html"> Nous contacter </a></li>
+        </ul>
+    </nav>
+
+    <!-- Titre principal de la page -->
+    <section>
+        <h1 class="titreh1">Réserver une chambre</h1>
+    </section>
+
+</header>
+
+<!-- Contenu principale-->
+<main>
+
+    <!-- Pour le carré blanc -->
+    <div id="arrierePlanTableau">
+        <!-- Tableau -->
+        <table class="tableau-style">
+            <caption>Les disponibilités des chambres</caption> <!-- Legende tableau -->
+
+            <!-- En tete du tableau -->
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Superficie</th>
+                <th>Nombres de place</th>
+            </tr>
+            </thead>
+
+            <!-- Corpus du tableau-->
+            <tbody>
+            <tr>
+                <td>01-02-2023</td>
+                <td>Lugar</td>
+                <td>150€</td>
+                <td>20m²</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>02-03-2023</td>
+                <td>Lunder</td>
+                <td>120€</td>
+                <td>18m²</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>04-08-2023</td>
+                <td>None Rey</td>
+                <td>180€</td>
+                <td>28m²</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>05-12-2023</td>
+                <td>Thor</td>
+                <td>100€</td>
+                <td>20m²</td>
+                <td>4</td>
+            </tr>
+            </tbody>
+
+            <!-- Bas de tableau -->
+            <tfoot>
+            <tr>
+                <td colspan="5">Les dates sont à titre indicatif</td>  <!-- toutes la ligne -->
+            </tr>
+            </tfoot>
+
+        </table>
+
+        <!-- Bouton de la page -->
+        <div class="center">
+            <input type="submit" class="vert" value="Envoyer">
+            <input type="reset" class="red" value="Annuler">
+        </div>
+
+    </div>
+</main>
+
+<!-- Bas de page -->
+<footer>
+    <p class="copy">&copy; 2022 FOURNIER Mathéo</p>  <!--Copyright -->
+</footer>
+
+</body>
+</html>

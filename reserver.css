@@ -1,0 +1,298 @@
+/*----------- ELEMENTS COMMUN DE LA PAGE----------------*/
+
+* {
+    padding: 0; /* enleve les padding auto */
+    margin: 0; /* enleve les marge auto sur la page */
+    box-sizing: border-box; /* prend en compte margin-padding dans les calculs de largeur */
+    font-family: 'Roboto', sans-serif; /* pour le texte de la page */
+}
+
+body {
+    background-image: linear-gradient(to right, #7200D0, #C800C1); /* image de fond de la page */
+}
+
+h1, h2, h3 {
+    font-family: Arial, sans-serif; /* police pour tous les titres */
+    text-align: center;
+}
+
+a {
+    text-decoration: none; /* enlever le surlignement des liens */
+}
+
+/*----------- TITRE PRINCIPAL DE LA PAGE---------------*/
+
+.titreh1 {
+    text-transform: uppercase; /* majuscule */
+    margin-top: 1em; /* espace avec le haut de la page */
+    color: white;
+    font-size: 2em;
+}
+
+/*----------- ANIMATION TITRE---------------*/
+
+h1 {
+    animation: apparition 0.8s ease-out; /* déclaration de l'animation */
+}
+
+/* definir le comportement de l'animation */
+@keyframes apparition {
+    from { /* depart */
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to { /* arriver */
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/*-------------------BOUTON HAMBURGER-------------------*/
+
+/* case pour ouvrir le menu */
+.checkbox {
+    display: none; /* Masquer la coche */
+}
+
+/* placer les 3 traits */
+.bouton {
+    background-color: white;
+    height: 5em;
+    width: 5em;
+    border-radius: 50%; /* rond */
+    position: fixed;
+    top: 2.5vh; /*haut*/
+    right: 5vw; /*droite*/
+    z-index: 3; /*ordre des éléments*/
+    box-shadow: 0 1em 3em black; /* ombre */
+    cursor: pointer;
+}
+
+/* arrière plan */
+.fondCouleur {
+    height: 4em; /* prend tout l'ecran */
+    width: 4em; /* prend tout l'ecran */
+    position: fixed;
+    border-radius: 50%; /* pour avoir la meme forme que le rond*/
+    right: 5.5vw;
+    background-color: lightblue;
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); /* Apparition des éléments */
+}
+
+/*-------------------TRAIT HAMBURGER-------------------*/
+
+/* icone hamburger */
+.trait {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*style des traits*/
+.trait, .trait::before, .trait::after {
+    width: 3em; /* largeur des traits */
+    height: 0.125em; /* hauteur des traits */
+    background-color: gray;
+}
+
+/*apparition trait */
+.trait::before, .trait::after {
+    content: ""; /* contenu vide */
+    position: absolute;
+}
+
+/* placemnt trait du haut */
+.trait::before {
+    top: -0.8em;
+}
+
+/* placement trait du bas */
+.trait::after {
+    top: 0.8em;
+}
+
+/*-------------------NAVIGATION MENU HAMBURGER-------------------*/
+
+/* lien du menu hamburger */
+header nav a {
+    color: black;
+    font-weight: bold;
+}
+
+/* mettre les elements à l'interieur */
+.nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -50vw; /* masquer sur la fenetre principale */
+    width: 0; /* fermeture du menu */
+    transition: all 0.8s; /* appaition pas direct */
+}
+
+/* placement des elements */
+.nav_interieur {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none; /* enlever les puces des listes */
+    text-align: center; /* centrer le texte */
+}
+
+/* comportement des li */
+.barre_nav {
+    margin: 1.2em; /* espacer les li entre eux */
+    font-size: 2.5em;
+}
+
+/*-------------------SURVOL-------------------*/
+
+/* quand on survol les li */
+.nav li a:hover {
+    color: red;
+    transition: color, 0.3s; /*couleur n'apparait pas immédiatemment */
+    cursor: pointer; /* pour indiquer qu'on peut cliquer */
+}
+
+/*-------------------ANIMATION APPARITION-------------------*/
+
+/* fond bleu */
+.checkbox:checked ~ .fondCouleur {
+    transform: scale(80); /* apparition du fond bleu */
+}
+
+/* elements de navigation */
+.checkbox:checked ~ .nav {
+    width: 100%;
+    right: 0; /*sinon element pas centrer */
+}
+
+/*-------------------CROIX FERMETURE-------------------*/
+
+/* trait du milieu */
+.checkbox:checked + .bouton .trait {
+    background-color: transparent; /* rendre invisible le trait du milieu */
+}
+
+/* trait du haut */
+.checkbox:checked + .bouton .trait::before {
+    top: 0;
+    transform: rotate(135deg); /*rotation du trait*/
+}
+
+/* trait du bas */
+.checkbox:checked + .bouton .trait::after {
+    top: 0;
+    transform: rotate(-135deg); /*rotation du trait */
+}
+
+/*-------------------TABLEAU-------------------*/
+
+/*fond blanc */
+#arrierePlanTableau {
+    width: 62em; /* largeur de l'arriere plan */
+    height: 42em; /* hauteur de l'arriere plan */
+    margin: 3em auto; /* centre avec un margin top et bottom */
+    border-radius: 3.2em; /* arrondir les coins */
+    background-color: #ffffff; /*couleur blanche*/
+}
+
+/*legende tableau */
+caption {
+    color: midnightblue;
+    border-bottom: 2px solid deeppink; /*creer le trait*/
+    margin: 1.8em; /*espacer avec le tableau */
+    padding: 0.5em; /*espace avec le trait */
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+/*style du tableau*/
+.tableau-style {
+    border-collapse: collapse; /*bordure commune*/
+    width: auto; /*prend la largeur necessaire*/
+    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.15); /*ombre sur le tableau*/
+    cursor: pointer;
+    margin: auto; /*mettre au centre*/
+    text-align: center; /*aligner le texte dans les cases */
+}
+
+/*style en-tête tableau */
+thead tr {
+    background-color: midnightblue;
+    color: white;
+}
+
+/*style du corps du tableau quand on le survole */
+tbody tr:hover {
+    font-weight: bold;
+    transition: font-weight, 0.3s;
+}
+
+/* ligne colonne */
+th, td {
+    padding: 25px 30px; /*espacer le tableau */
+}
+
+/*cases du tableau */
+tr, td, th {
+    border: 1px solid #ddd; /*bordure du tableau */
+}
+
+/* 1 lignes sur 2 */
+tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+/*bas de tableau */
+tfoot {
+    background-color: midnightblue;
+    color: white;
+    font-size: 2em;
+}
+
+/*-------------------BOUTON-------------------*/
+
+/*bouton envoyer annuler*/
+input[type=submit], input[type=reset] {
+    border-radius: 5px; /*arrondir*/
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0.4em; /*espace interieur*/
+    margin: 0.8em; /*espacer avec le tableau */
+    cursor: pointer;
+    color: white;
+    width: 10em; /*agrandrir les boutons */
+}
+
+/*bouton annuler*/
+.red {
+    background-color: red;
+}
+
+/*bouton envoyer*/
+.vert {
+    background-color: #097981;
+}
+
+/*survol des boutons*/
+input[type=submit]:hover, input[type=reset]:hover {
+    filter: brightness(120%); /*luminosité*/
+    transition: filter, 0.5s;
+}
+
+/*bouton*/
+.center {
+    text-align: center;
+}
+
+/*-----------------FOOTER------------------*/
+
+/*copyright*/
+.copy {
+    color: white;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 4em; /*ne pas etre colé au bas de page */
+}

@@ -1,0 +1,208 @@
+<!-- FOURNIER Mathéo -->
+<!-- S1C2-->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<!--Page-->
+<head>
+    <!-- Encodage -->
+    <meta charset="UTF-8">
+    <!-- Titre -->
+    <title>Contact</title>
+    <!-- Fichier CSS -->
+    <link rel="stylesheet" href="./css/contact.css" type="text/css">
+</head>
+
+<!-- Corps du document -->
+<body>
+
+<!-- En-tête de la page-->
+<header>
+
+    <!-- Menu hamburger -->
+    <input type="checkbox" id="hamburger" class="checkbox"> <!-- Coche pour ouvrir menu -->
+    <label for="hamburger" class="bouton">
+        <span class="trait"></span> <!-- Creation des traits-->
+    </label>
+    <div class="fondCouleur"></div> <!-- Div vide pour le background-->
+
+    <!-- Intérieur du menu hamburger -->
+    <nav class="nav">
+        <ul class="nav_interieur">
+            <!-- Liens des différentes pages -->
+            <li class="barre_nav"><a href="index.html"> Accueil</a></li>
+            <li class="barre_nav"><a href="index.html#footer"> Aide</a></li>
+            <li class="barre_nav"><a href="connexion.html"> Connexion</a></li>
+            <li class="barre_nav"><a href="reserver.html"> Reserver </a></li>
+        </ul>
+    </nav>
+
+</header>
+
+
+<!-- Contact -->
+<main>
+
+    <!-- Formulaire + bouton-->
+    <article>
+
+        <!-- Titre principale  -->
+        <header>
+            <h1 class="titreh1">Nous contacter</h1>
+        </header>
+
+
+        <!-- Formulaire fonctionnel sans base de donnée-->
+        <form method="post" action="contact.html" id="form">
+
+            <!--Englobe uniquement les fieldset-->
+            <div class="grid">
+
+                <!-- Section 1 du formulaire à gauche -->
+                <fieldset>
+
+                    <!-- Titre section-->
+                    <legend>Vos informations</legend>
+
+                    <!-- Champ 1-->
+                    <p>
+                        <label for="nom">Nom <span class="obligatoire">*</span></label>
+                        <input id="nom" name="nom" type="text" required> <!-- Champ obligatoire-->
+                    </p>
+
+                    <!-- Champ 2-->
+                    <p>
+                        <label for="prenom">Prénom <span class="obligatoire"> *</span></label>
+                        <input id="prenom" name="prenom" type="text" required> <!-- Champ obligatoire-->
+                    </p>
+
+                    <!-- Champ 3-->
+                    <p>
+                        <label for="email">Email <span class="obligatoire"> *</span></label>
+                        <input id="email" name="email" type="email" placeholder="claude345@gmail.com" required>
+                    </p>
+
+                    <!-- Champ 4-->
+                    <p>
+                        <label for="date">Date de naissance <span class="obligatoire">*</span></label>
+                        <input id="date" name="date" type="date" required> <!-- Champ obligatoire-->
+                    </p>
+
+                    <!-- Choix unique-->
+                    <label>Sexe <span class="obligatoire">*</span></label>
+                    <!-- Option 1-->
+                    <div>
+                        <!-- Champ obligatoire et précocher-->
+                        <input type="radio" name="sexe" id="masculin" value="M" required checked>
+                        <label for="masculin">Masculin</label>
+                    </div>
+
+                    <!-- Option 2e-->
+                    <div class="espace">
+                        <input type="radio" name="sexe" id="feminin" value="F">
+                        <label for="feminin">Féminin</label>
+                    </div>
+
+                    <!-- Choix multiple-->
+                    <label>Préférences de communication</label>
+                    <div>
+                        <!-- Option 1 -->
+                        <input type="checkbox" id="mail" name="mail" value="mail" checked> <!-- Précocher-->
+                        <label for="mail">Mail</label>
+
+                        <!-- Option 2-->
+                        <input type="checkbox" id="tel" name="telephone" value="telephone" checked> <!-- Précocher-->
+                        <label for="tel">Téléphone </label>
+
+                        <!-- Option 3-->
+                        <input type="checkbox" id="courrier" name="courrier" value="courrier">
+                        <label for="courrier">Courrier</label>
+                    </div>
+
+                    <!-- Info complementaire-->
+                    <div>
+                        <p><span class="obligatoire"> * champ obligatoire</span></p>
+                    </div>
+
+                </fieldset>
+
+                <!-- Section 2 du formulaire-->
+                <fieldset>
+
+                    <!-- Titre du champ-->
+                    <legend>Votre message</legend>
+
+                    <!--Menu deroulant-->
+                    <p>
+                        <label for="obj" class="objet">Objet <span class="obligatoire">*</span></label>
+                        <select name="objet" id="obj">
+                            <!-- Option disponible-->
+                            <option value="renseignement">Je souhaite obtenir un renseignement auprès de l'hotel</option>
+                            <option value="reserver">Je souhaite réserver une chambre</option>
+                            <option value="devis">Je souhaite obtenir un devis</option>
+                            <option value="question" selected>Je souhaite poser une question à un conseiller</option>
+                        </select>
+                    </p>
+
+                    <!-- Choix unique-->
+                    <label>Êtes vous dejà venu ?</label>
+                    <!-- Option 1-->
+                    <div>
+                        <input type="radio" name="visite" id="venu" value="oui">
+                        <label for="venu">Oui</label>
+                    </div>
+
+                    <!-- Option 2-->
+                    <div>
+                        <input type="radio" name="visite" id="pasvenu" value="non">
+                        <label for="pasvenu">Non</label>
+                    </div>
+
+                    <!-- Option 3-->
+                    <div>
+                        <input type="radio" name="visite" id="encours" value="bientot">
+                        <label for="encours">J'ai une réservation en cours</label>
+                    </div>
+
+                    <!-- Zone de texte-->
+                    <p>
+                        <label for="message">Message (30 caractères min) <span class="obligatoire">*</span></label>
+                        <!-- Obligatoire / 30 caracteres min-->
+                        <textarea name="message" id="message" rows="12"
+                                  placeholder="Je vous contacte concernant..."
+                                  minlength="30" required></textarea>
+                    </p>
+
+                    <!-- Info complementaire-->
+                    <div>
+                        <p><span class="obligatoire"> * champ obligatoire</span></p>
+                    </div>
+
+                </fieldset>
+            </div>
+            <!-- BAS DU FORMULAIRE-->
+
+            <!-- Checkbox-->
+            <div class="cgu">
+                <input type="checkbox" id="conditions" required> <!-- Champ obligatoire-->
+                <label for="conditions">J'accepte les conditions d'utilisations<span class="obligatoire"> *</span></label>
+            </div>
+
+            <!-- Bouton du formulaire-->
+            <div class="button">
+                <input type="reset" class="rouge" value="Annuler"> <!-- Rouge-->
+                <input type="submit" class="vert" value="Envoyer"> <!-- Vert-->
+            </div>
+
+        </form>
+    </article>
+</main>
+
+<!-- Copyright-->
+<footer>
+    <p class="copy">&copy; 2022 FOURNIER Mathéo</p>
+</footer>
+
+</body>
+</html>

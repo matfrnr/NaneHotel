@@ -1,0 +1,110 @@
+<!-- FOURNIER Mathéo -->
+<!-- S1C2-->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- Page-->
+<head>
+    <!--Encodage -->
+    <meta charset="UTF-8">
+    <!-- Titre -->
+    <title>Connexion</title>
+    <!-- Icône -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <!-- Fichier CSS -->
+    <link rel="stylesheet" href="./css/connexion.css" type="text/css">
+</head>
+
+<!-- Corps du document -->
+<body>
+
+<!-- En-tête de la page-->
+<header>
+
+    <!-- Menu hamburger -->
+    <input type="checkbox" id="hamburger" class="checkbox"> <!-- Coche pour ouvrir menu -->
+    <label for="hamburger" class="bouton">
+        <span class="trait"></span> <!-- Creation des traits-->
+    </label>
+    <div class="fondCouleur"></div> <!-- Div vide pour le background -->
+
+    <!-- Intérieur du menu hamburger -->
+    <nav class="nav">
+        <ul class="nav_interieur">
+            <!-- Liens des différentes pages -->
+            <li class="barre_nav"><a href="index.html"> Accueil</a></li>
+            <li class="barre_nav"><a href="index.html#footer"> Aide</a></li>
+            <li class="barre_nav"><a href="reserver.html"> Reserver</a></li>
+            <li class="barre_nav"><a href="contact.html"> Nous contacter </a></li>
+        </ul>
+    </nav>
+
+    <!-- Titre principal de la page -->
+    <section>
+        <h1 class="titreh1">Formulaire de connexion</h1>
+    </section>
+
+</header>
+
+<!-- Contenu principale-->
+<main>
+
+    <!-- Formulaire-->
+    <section>
+
+        <!-- Bloc blanc -->
+        <div id="form">
+
+            <!-- Image pc -->
+            <div id="form_image">
+                <img src="./media/icon.png" alt="ordinateur">
+            </div>
+
+            <!-- Champ de connexion -->
+            <div id="form_champ">
+
+                <!-- En tete du formulaire -->
+                <header>
+                    <h2>Se connecter</h2>
+                </header>
+
+                <!-- CHAMP EMAIL -->
+                <div class="input_container">
+                    <!-- Icone -->
+                    <i class="fas fa-envelope"></i>
+                    <!-- Champ email -->
+                    <input placeholder="Email" type="email" name="Email" id="email_" class='input_champ'>
+                </div>
+
+                <!-- CHAMP MOT DE PASSE -->
+                <div class="input_container">
+                    <!-- Icone -->
+                    <i class="fas fa-lock"></i>
+                    <!-- Champ password -->
+                    <input placeholder="Password" type="password" name="Password" id="password_" class='input_champ'>
+                </div>
+
+                <!-- CHAMP BOUTON -->
+                <div>
+                    <input type="submit" value="Login" id='input_bouton' class='input_champ'>
+                </div>
+
+                <!-- Création compte -->
+                <span id='compte'>
+                <a href="https://www.google.fr/" target="_blank">Créer votre compte &#x27A1; </a> <!-- Icone flèche -->
+                </span>
+
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Bas de page -->
+<footer>
+    <p class="copy">&copy; 2022 FOURNIER Mathéo</p>
+</footer>
+
+</body>
+</html>

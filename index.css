@@ -1,0 +1,510 @@
+/*----------- ELEMENTS COMMUN DE LA PAGE----------------*/
+
+* {
+    padding: 0; /* enleve les padding auto */
+    margin: 0; /* enleve les marge auto sur la page */
+    box-sizing: border-box; /* prend en compte margin-padding dans les calculs de largeur */
+    font-family: 'Roboto', sans-serif; /* pour le texte de la page */
+}
+
+html {
+    scroll-behavior: smooth; /* comportement quand on scroll */
+}
+
+/*titre*/
+h1, h2, h3 {
+    font-family: Arial, sans-serif; /* police pour tous les titres */
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+/*lien*/
+a {
+    text-decoration: none; /* enlever le surlignement des liens */
+    color: black;
+}
+
+/*titre*/
+h2 {
+    text-transform: uppercase;
+    font-size: 2em;
+    color: coral;
+    margin-top: 0.7em;
+}
+
+/*survol lien*/
+a:hover {
+    color: red;
+    transition: color 0.2s;
+}
+
+/*----------- BARRE DE NAVIGATION ----------------*/
+
+/*navbar*/
+nav {
+    background-color: #FFFAE1;
+    position: fixed;
+    width: 100%; /*prendre toutes la largeur*/
+    z-index: 2; /* pour ne pas passer sous les elements */
+}
+
+/*liens des pages*/
+header li a {
+    float: right; /*mettre les elements a droite*/
+    font-size: 1.3em; /*taille de police des liens*/
+    padding: 18px 16px; /*espacer les liens */
+}
+
+/*uniquement les liens de pages*/
+.rigth li a {
+    font-style: oblique;
+}
+
+/*logo*/
+#logo {
+    font-weight: bold;
+    float: left; /* le mettre à gauche*/
+    margin-left: 15px; /*se décaler du bord*/
+}
+
+/*----------- SURVOL BARRE DE NAVIGATION ----------------*/
+
+/* surlignement avec une transition sur les onglets */
+.rigth li a::after {
+    content: ""; /*pour afficher le trait*/
+    display: block;
+    width: 0%; /*pour le masquer quand on la survol pas*/
+    height: 2px; /*taille barre*/
+    background: red;
+}
+
+/*passage sur la nav*/
+.rigth li a:hover::after {
+    width: 100%; /* pour afficher le trait au passage */
+    transition: width 0.4s ease-in-out;
+}
+
+/*----------- IMAGE DE FOND ----------------*/
+
+/* image  */
+#imagePrincipale {
+    padding-top: 60px;
+    background: url(../media/image-principale.JPG) no-repeat fixed 50% 50%; /*ne pas repeter l'image*/
+    background-size: cover; /*image qui prend toute la place du conteneur avec mise à echelle*/
+    height: 53em; /*taille image*/
+}
+
+/*----------- TITRE SUR IMAGE DE FOND ----------------*/
+
+/*apparition des titres*/
+#imagePrincipale h1, .titleSecondaire, #premierTrait {
+    animation: descente 0.8s ease-out;
+}
+
+/*instructions animation*/
+@keyframes descente {
+    /* depart */
+    from {
+        opacity: 0; /*le cacher au debut*/
+        transform: translateY(-200px);
+    }
+    /* arriver */
+    to {
+        opacity: 1; /*le faire apparaitre*/
+        transform: translateY(0px);
+    }
+}
+
+/*titre principale image de fond*/
+h1 {
+    color: antiquewhite;
+    font-size: 6em;
+    margin-top: 110px; /*marge avec le nav*/
+    text-shadow: 1px 3px 2px black; /* ombre */
+}
+
+/*survol du h1*/
+h1:hover {
+    color: red;
+    transition: color 1.5s ease-out;
+}
+
+/*trait de l'image de fond*/
+#premierTrait {
+    height: 3px;
+    width: 25%; /*pour ne pas prendre toute la largeur*/
+    margin: 4.5em auto; /*centre et espace avec H1*/
+    background-color: white;
+}
+
+/*titre secondaire de l'image de fond*/
+.titleSecondaire {
+    color: ghostwhite;
+    margin-top: 1.4em; /*espace avec le trait*/
+    font-size: 4em;
+}
+
+/*----------- SECTION PRESENTATION ----------------*/
+
+/*fond couleur*/
+#presentation {
+    background-color: #FFFAE1;
+    padding: 1px 2%; /* POUR SUPPRIMER LA BANDE ENTRE 2 BLOCS */
+}
+
+/*lorem*/
+#texteIntro p {
+    padding: 0px 20%;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 1.5em 0; /*marge en bas et en haut*/
+}
+
+/*titre h3 */
+.presentationh3 {
+    text-transform: uppercase;
+    font-size: 2em;
+    color: violet;
+}
+
+/*image */
+#prestations {
+    display: flex; /*pour les aligner*/
+    flex-wrap: wrap;
+    justify-content: space-between; /*espace equivalent*/
+    padding: 30px 10%; /*ne pas etre collé au bord*/
+}
+
+/*titre des images*/
+.imagesPrestations h4 {
+    text-align: center;
+    font-size: 1.6em;
+    margin: 15px; /*se detacher des images*/
+    font-weight: bold;
+    font-style: italic;
+    color: #6b6b6b;
+}
+
+/*images*/
+.imagesPrestations img {
+    border-radius: 10px; /*arrondir les bords*/
+    box-shadow: 5px 5px 3px 1px rgba(0, 0, 0, 0.7); /*ombres sur les images*/
+}
+
+/*survol des images*/
+.imagesPrestations img:hover {
+    opacity: 0.5; /*effet flou*/
+    transform: scale(1.05); /*zoom*/
+    transition: 0.6s ease-in-out;
+}
+
+/*-------------SECTION TOURISME------------*/
+
+/*section*/
+#tourisme {
+    height: 100em; /*taille de la section*/
+    background-color: #f1f2f6;
+    padding: 1px 2%; /* POUR SUPPRIMER LA BANDE ENTRE 2 BLOCS */
+}
+
+/*-------------IMAGE SECTION TOURISME------------*/
+
+/*image gauche*/
+#ocean {
+    background: url(../media/ocean.jpg) no-repeat;
+}
+
+/*image droite*/
+#chateau {
+    background: url(../media/chateau.JPG) no-repeat;
+}
+
+/*image gauche*/
+#phare {
+    background: url(../media/phare.JPG) no-repeat;
+}
+
+/*image droite*/
+#vignoble {
+    background: url(../media/vignes.jpg) no-repeat;
+}
+
+/*li contenant les images en arriere plan*/
+#tourisme li {
+    background-size: cover; /*prend tout l'espace disponible pour ne pas avoir de zone blanche*/
+    margin: 4em 6.25em 0 23em; /* espacer les images */
+    height: 19em; /* taille de l'image*/
+    width: 100%;
+    max-width: 40em; /* ne pas avoir de blanc  */
+    box-shadow: 6px 6px 28px -1px rgb(0, 0, 0, 0.75); /* ombres */
+    border-radius: 25px;
+}
+
+/*mettre 1/2 image a gauche*/
+#tourisme #chateau, #tourisme #vignoble {
+    margin-left: 58em;
+}
+
+/*survol des images section tourisme*/
+#ocean:hover, #phare:hover, #vignoble:hover, #chateau:hover {
+    opacity: 0.8; /*effet flou*/
+    transform: scale(1.05); /*zoom*/
+    transition: 0.6s ease-in-out;
+}
+
+/*-------------TEXTE SECTION TOURISME------------*/
+
+/*texte sur les images de gauche*/
+#tourisme p {
+    height: 65px;
+    width: 235px;
+    background-color: #01df74;
+    float: right; /*position sur l'image*/
+    margin: 60px -120px 0 0;
+    font-size: 1.5em;
+    font-style: oblique;
+    font-weight: 600;
+    text-align: center; /*centrer dans le cadre*/
+    padding-top: 20px;
+    box-shadow: 5px 5px 0 1px rgb(90, 161, 43, 1);
+}
+
+/*texte image de droite*/
+#chateau p, #vignoble p {
+    float: left;
+    font-size: 1.6em;
+    background-color: cyan; /*couleur du cadre*/
+    margin: 60px -180px; /*position*/
+    box-shadow: -5px 5px 0 1px rgb(15, 154, 156, 1);
+}
+
+/*-------------SECTION EXPERT ------------*/
+
+/*conteneur section*/
+.experte_ {
+    height: 42em;
+    padding: 2px; /* POUR SUPPRIMER LA BANDE ENTRE 2 BLOCS */
+    background-color: #FFFAE1;
+}
+
+/*titre section*/
+.experte_ h2 {
+    margin-bottom: 30px;
+}
+
+/*citation*/
+.experteCitation {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+/*video*/
+iframe {
+    border: none;
+    border-radius: 35px; /*arrondir la video*/
+}
+
+/*maison + video*/
+.experte {
+    padding: 2.5em;
+    display: flex; /*element en ligne*/
+}
+
+/* taille image maison */
+.experte img {
+    width: 260px;
+    height: 150px;
+}
+
+/*maison gauche*/
+.experteDroite {
+    margin: auto;
+    position: relative;
+    right: 70px;
+    animation: tourne 2s linear infinite;
+}
+
+/*maison droite*/
+.experteGauche {
+    margin: auto;
+    position: relative;
+    left: 70px;
+    animation: tourne 2s linear infinite;
+
+}
+
+/*rotation des maisons*/
+@keyframes tourne {
+    /*debut*/
+    from {
+        transform: rotate(0deg);
+    }
+    /*fin*/
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*-------------DEFILEMENT DES IMAGES------------*/
+
+/*background section*/
+.deroulant {
+    padding: 2px; /* POUR SUPPRIMER LA BANDE ENTRE 2 BLOCS */
+    background-color: #f1f2f6;
+}
+
+/*boite contenant les images*/
+.slider-1 {
+    max-width: 1000px; /*taille max de l'image*/
+    margin: 100px auto; /*centre et espace vertical*/
+    overflow: hidden; /*permet de masquer les images suivantes*/
+    border: 10px solid black;
+}
+
+/*faire le defilement des images*/
+.slider-1 .slider {
+    animation: slider-1 10s infinite ease-in-out; /* duree du defilement avant retour debut*/
+    display: flex; /*sinon alignement en block*/
+}
+
+/*comportement des images*/
+.slider-1 img {
+    flex-shrink: 0; /*masquer les autres images*/
+    width: 100%; /*l'image prend toute la longueur ce qui permet de ne pas voir les autres*/
+}
+
+/*Animation défilement des images */
+@keyframes slider-1 {
+    0%,
+    20% {
+        transform: translateX(0);
+    }
+    25%,
+    45% {
+        transform: translateX(-100%);
+    }
+    50%,
+    70% {
+        transform: translateX(-200%);
+    }
+    75%,
+    95% {
+        transform: translateX(-300%);
+    }
+    100% {
+        transform: translateX(-400%);
+    }
+}
+
+/*-------------FOOTER------------*/
+
+/*LOGO DU FOOTER */
+
+/*les 2 logos*/
+.logoFooter {
+    margin: auto;
+    width: 260px;
+    height: 200px;
+}
+
+/*logo gauche*/
+#incline1 {
+    transform: rotate(-30deg);
+    margin-left: 0;
+}
+
+/*logo droite*/
+#incline2 {
+    transform: rotate(30deg);
+    margin-left: 0;
+}
+
+/*CONTENU FOOTER*/
+
+/*background*/
+.footer {
+    background-color: #24262b;
+    padding: 40px 0; /*espacer les elements dans le footer*/
+}
+
+/*section footer*/
+.container {
+    /* max-width: 1170px; */ /* longueur max que peut prenndre le contenu*/
+    margin: auto; /*centrer*/
+}
+
+/*ligne*/
+.row {
+    display: flex; /*mettre en ligne*/
+    margin-left: 6.5em;
+}
+
+/*colonne*/
+.footer-col {
+    width: 15%;
+    padding: 0 25px;
+}
+
+/*titre des colonnes*/
+.footer-col h4 {
+    font-size: 1.5em;
+    color: #ffffff;
+    text-transform: capitalize; /* majuscule au debut*/
+    margin-bottom: 35px; /*espace avec les li*/
+    position: relative; /*pour le trait*/
+}
+
+/*trait rouge titre colonne*/
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* mettre le trait en bas*/
+    background-color: #e91e63;
+    height: 3px; /*hauteur trait*/
+    width: 50px; /*largeur trait*/
+}
+
+/*chaque li sauf le dernier*/
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 15px; /*espace entre les li*/
+}
+
+/*lien*/
+.footer-col ul li a {
+    font-size: 1.5em; /*taille police lien*/
+    color: #bbbbbb;
+}
+
+/*survol du footer*/
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 10px; /*decaler a droite*/
+    transition: all 0.3s ease; /* decalage du footer */
+}
+
+/*icone des reseaux sociaux*/
+.footer-col .social-links a {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-color: rgba(255, 255, 255, 0.2); /*fond gris*/
+    margin: 0 10px 10px 0; /*espacer les icones*/
+    text-align: center; /*aligner au centre du rond*/
+    line-height: 58px;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+/*copyright*/
+.copy {
+    color: white;
+    font-style: italic;
+    text-align: center;
+    margin-top: 3em;
+    font-size: 1.2em;
+}
