@@ -1,0 +1,456 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&family=Dancing+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ---------ELEMENTS GENERAUX------------ */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-transform: none;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth; /* comportement quand on scroll */
+}
+
+body {
+  font-family: "Advent Pro", sans-serif;
+  height: 100vh;
+}
+
+h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem;
+  margin: 5px 0 15px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* ---------BARRE DE NAVIGATION------------ */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  background: rgb(228, 219, 219);
+  padding: 15px 2%;
+  z-index: 50;
+}
+
+#logo {
+  font-family: "Dancing Script", cursive;
+  font-weight: bold;
+}
+
+.ongletNav {
+  display: flex;
+}
+
+.ongletNav li {
+  margin: 0 15px;
+}
+
+.ongletNav li a:hover {
+  color: red;
+  transition: 0.4s;
+}
+
+/* ---------SECTION IMAGE DE FOND------------ */
+
+#imagePrincipale {
+  background: url(media/image-principale.JPG) center / cover fixed;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  color: white;
+  font-size: 7rem;
+  text-shadow: 1px 3px 2px black;
+  padding: 35px 0;
+}
+
+#premierTrait {
+  height: 3px;
+  width: 30%;
+  margin: 0 auto;
+  background-color: white;
+}
+
+header h3 {
+  text-align: center;
+  color: white;
+  font-size: 4em;
+  padding: 25px 0;
+}
+
+/* ---------SECTION DE PRESENTATION------------ */
+
+#presentation {
+  background-color: #fffae1;
+  padding: 25px 0;
+}
+
+#texteIntro {
+  max-width: 65%;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+#prestations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px 10%;
+}
+
+.imagesPrestations h4 {
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  font-size: 1.8em;
+  margin: 15px 0;
+}
+
+.imagesPrestations img {
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 5px 5px 3px 1px rgba(0, 0, 0, 0.7);
+}
+
+.imagesPrestations img:hover {
+  opacity: 0.8;
+  transform: scale(1.02);
+  transition: 0.4s ease-in-out;
+}
+
+/*-------------IMAGE EN ESCALIER------------*/
+
+#tourisme {
+  background-color: #f1f2f6;
+  padding: 25px 0;
+}
+
+.imageDecalage {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 40px 0;
+  padding: 30px 0;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "ocean ." ". chateaux" "estuaire ." ". vignoble";
+}
+
+#ocean {
+  background: url(media/ocean.jpg) center / cover;
+  grid-area: ocean;
+  place-self: center;
+  width: 100%;
+  position: relative;
+}
+
+#chateau {
+  background: url(media/chateau.JPG) center / cover;
+  grid-area: chateaux;
+  place-self: center;
+  width: 100%;
+  position: relative;
+}
+
+#phare {
+  background: url(media/phare.JPG) center / cover;
+  grid-area: estuaire;
+  place-self: center;
+  width: 100%;
+  position: relative;
+}
+
+#vignoble {
+  background: url(media/vignes.jpg) center / cover;
+  grid-area: vignoble;
+  place-self: center;
+  width: 100%;
+  position: relative;
+}
+
+#tourisme ul {
+  margin: 0 6%;
+}
+
+#tourisme li {
+  height: 250px;
+  max-width: 500px;
+  min-width: 500px;
+  box-shadow: 6px 6px 28px -1px rgb(0, 0, 0, 0.75);
+}
+
+.imageDecalage li p {
+  position: absolute;
+  top: 60px;
+  right: -70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 45px;
+  background-color: #01df74;
+  font-size: 1.3rem;
+  font-weight: 700;
+  box-shadow: 2px 2px 0 1px rgb(90, 161, 43, 1);
+}
+
+/*image de droite*/
+#chateau p,
+#vignoble p {
+  background-color: cyan;
+  box-shadow: 2px 2px 0 1px rgb(15, 154, 156, 1);
+}
+
+/*-------------FOOTER------------*/
+
+footer {
+  background: #24262b;
+  padding: 20px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.container_enfant {
+  display: flex;
+  justify-content: space-around;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.footerContent h4 {
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin: 30px 0;
+  font-weight: 500;
+  position: relative;
+}
+
+.footerContent h4::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  background: #e91e63;
+  height: 2px;
+  width: 80%;
+}
+
+.footerContent ul li {
+  margin-bottom: 10px;
+}
+
+.footerContent li a {
+  color: #bbbbbb;
+}
+
+.footerContent ul li a:hover {
+  margin-left: 8px;
+  transition: 0.3s ease-in-out;
+}
+
+.footerContent .social-links a {
+  display: inline-block;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 5px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+.footerContent .social-links a:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.copy {
+  color: white;
+  text-align: center;
+  margin: 20px 0 0;
+}
+
+.copy span {
+  color: orange;
+}
+
+/*-------------RESPONSIVE------------*/
+
+@media screen and (min-width: 1500px) {
+  #tourisme ul {
+    margin: 0 15%;
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .imageDecalage li p {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 60%;
+    font-size: 1.2rem;
+  }
+  .imageDecalage li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #tourisme ul {
+    margin: 0 15%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container_enfant {
+    max-width: 100%;
+  }
+  footer a {
+    font-size: 0.8rem;
+  }
+  .footerContent h4 {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  .footerContent h4:before {
+    width: 50%;
+  }
+  #imagePrincipale {
+    background: url(media/image-principale.JPG) center / cover;
+  }
+  #texteIntro {
+    max-width: 75%;
+  }
+  #texteIntro p {
+    font-size: 0.9rem;
+  }
+  #texteIntro h2 {
+    font-size: 1.5rem;
+  }
+  .imagesPrestations {
+    width: 25%;
+  }
+  header h1 {
+    font-family: "Dancing Script", cursive;
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    text-shadow: 1px 3px 2px black;
+    padding: 35px 0;
+  }
+  header h1 {
+    font-size: 5rem;
+  }
+  header h3 {
+    font-size: 3rem;
+  }
+  .imageDecalage {
+    display: block;
+  }
+  #tourisme li {
+    margin: 0 auto 40px;
+  }
+  #tourisme #vignoble {
+    margin: 0 auto;
+  }
+  .imageDecalage li p {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 60%;
+    font-size: 1rem;
+  }
+  .imageDecalage li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #tourisme ul {
+    margin: 0 6%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .imagesPrestations h4 {
+    font-size: 1.2rem;
+  }
+  header h1 {
+    font-size: 4rem;
+  }
+  header h3 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .footerContent .social-links a {
+    width: 30px;
+    line-height: 30px;
+    display: block;
+    margin: 5px auto;
+  }
+  #texteIntro {
+    max-width: 85%;
+  }
+  #tourisme li {
+    min-width: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  footer {
+    display: none;
+  }
+  #texteIntro p {
+    font-size: 0.7rem;
+  }
+  .imagesPrestations img {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  #tourisme li {
+    height: 230px;
+    max-width: 280px;
+    box-shadow: 6px 6px 28px -1px rgb(0, 0, 0, 0.75);
+  }
+  .imageDecalage li p {
+    font-size: 0.5rem;
+  }
+  #imagePrincipale {
+    background: none;
+    height: 0;
+  }
+  #presentation {
+    padding: 60px 0 10px;
+  }
+  nav {
+    font-size: 0.7rem;
+  }
+  .ongletNav li {
+    margin: 0 5px;
+  }
+  #prestations {
+    padding: 0px 10% 10px;
+  }
+}
